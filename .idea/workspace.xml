@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f216c49-b599-4250-99f0-daf1fd5639c6" name="Default" comment="" />
+    <list default="true" id="3f216c49-b599-4250-99f0-daf1fd5639c6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/zamonitor/App.java" afterPath="$PROJECT_DIR$/src/main/java/zamonitor/App.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/zamonitor/process/ProcessInfo.java" afterPath="$PROJECT_DIR$/src/main/java/zamonitor/process/ProcessInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/zamonitor/process/ProcessMonitor.java" afterPath="$PROJECT_DIR$/src/main/java/zamonitor/process/ProcessMonitor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    </list>
     <ignored path="zamonitor.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/ProcessMonitor.java" changelist="3f216c49-b599-4250-99f0-daf1fd5639c6" time="1368137518619" ignored="false" />
-    <file path="/App.java" changelist="3f216c49-b599-4250-99f0-daf1fd5639c6" time="1368136032197" ignored="false" />
-    <file path="/ProcessInfo.java" changelist="3f216c49-b599-4250-99f0-daf1fd5639c6" time="1368137485280" ignored="false" />
+    <file path="/ProcessMonitor.java" changelist="3f216c49-b599-4250-99f0-daf1fd5639c6" time="1368140522923" ignored="false" />
+    <file path="/App.java" changelist="3f216c49-b599-4250-99f0-daf1fd5639c6" time="1368140348684" ignored="false" />
+    <file path="/ProcessInfo.java" changelist="3f216c49-b599-4250-99f0-daf1fd5639c6" time="1368140035528" ignored="false" />
+    <file path="/Dummy.txt" changelist="3f216c49-b599-4250-99f0-daf1fd5639c6" time="1368139007464" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +73,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -88,8 +94,11 @@
       <file leaf-file-name="App.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/zamonitor/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="23" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="16" column="52" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#322#343#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,7 +106,7 @@
       <file leaf-file-name="ProcessMonitor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/zamonitor/process/ProcessMonitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="23" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.0">
+            <state line="47" column="93" selection-start="1414" selection-end="1414" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,10 +114,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProcessInfo.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ProcessInfo.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/zamonitor/process/ProcessInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="58" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0">
+            <state line="74" column="32" selection-start="1292" selection-end="1292" vertical-scroll-proportion="2.193676">
               <folding />
             </state>
           </provider>
@@ -121,13 +130,21 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/zamonitor/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/zamonitor/process/ProcessInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/zamonitor/process/ProcessMonitor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/zamonitor/process/ProcessInfo.java" />
       </list>
     </option>
   </component>
@@ -144,7 +161,7 @@
     <option name="width" value="1660" />
     <option name="height" value="1010" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -281,6 +298,8 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.0" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -289,6 +308,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Application.App">
@@ -423,6 +444,23 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="3f216c49-b599-4250-99f0-daf1fd5639c6" name="Default" comment="" />
@@ -544,7 +582,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/zamonitor/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="23" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#322#343#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -564,32 +605,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/zamonitor/App.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="23" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/zamonitor/process/ProcessInfo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/zamonitor/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="58" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="16" column="52" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#322#343#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/zamonitor/process/ProcessMonitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="23" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.0">
+        <state line="47" column="93" selection-start="1414" selection-end="1414" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/zamonitor/process/ProcessInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="74" column="32" selection-start="1292" selection-end="1292" vertical-scroll-proportion="2.193676">
           <folding />
         </state>
       </provider>

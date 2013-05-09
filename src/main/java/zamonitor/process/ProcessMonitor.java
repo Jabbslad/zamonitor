@@ -1,9 +1,9 @@
 package zamonitor.process;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,23 +15,38 @@ import java.io.InputStreamReader;
 public class ProcessMonitor implements Runnable {
 
     private int frequency;
+    private ConcurrentHashMap<String, ProcessInfo> stats;
 
-    public ProcessMonitor(int frequency) {
+    /**
+     * Hide default constructor so it can never be called
+     */
+    private ProcessMonitor() {
+        super();
+    }
+
+    public ProcessMonitor(ConcurrentHashMap<String, ProcessInfo> stats) {
+        this(1000, stats);
+    }
+
+    public ProcessMonitor(int frequency, ConcurrentHashMap<String, ProcessInfo> stats) {
         this.frequency = frequency;
+        this.stats = stats;
     }
 
     @Override
     public void run() {
 
-
         try {
             while(true) {
-                Process ps = Runtime.getRuntime().exec("ps -eaf");
+                Process ps = Runtime.getRuntime().exec("ps -ec -o %cpu,%mem,comm");
                 InputStreamReader sr = new InputStreamReader(ps.getInputStream());
                 BufferedReader br = new BufferedReader(sr);
-                String line = null;
+                String line;
                 while((line = br.readLine()) != null) {
                     System.out.println(line);
+                    /**
+                     * Todo: Parse line then stuff results into the 'stats' ConcurrentHashMap
+                     */
                 }
                 Thread.sleep(frequency);
             }
