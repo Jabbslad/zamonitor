@@ -4,3 +4,7 @@
 *.jar
 *.war
 *.ear
+
+# Project Files #
+*.idea/workspace.xml
+*.idea/vcs.xml

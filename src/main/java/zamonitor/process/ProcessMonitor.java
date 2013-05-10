@@ -3,6 +3,7 @@ package zamonitor.process;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Date;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -16,6 +17,7 @@ public class ProcessMonitor implements Runnable {
 
     private int frequency;
     private ConcurrentHashMap<String, ProcessInfo> stats;
+    private Date tickTime;
 
     /**
      * Hide default constructor so it can never be called
@@ -31,6 +33,7 @@ public class ProcessMonitor implements Runnable {
     public ProcessMonitor(int frequency, ConcurrentHashMap<String, ProcessInfo> stats) {
         this.frequency = frequency;
         this.stats = stats;
+        this.tickTime = null;
     }
 
     @Override
@@ -42,11 +45,13 @@ public class ProcessMonitor implements Runnable {
                 InputStreamReader sr = new InputStreamReader(ps.getInputStream());
                 BufferedReader br = new BufferedReader(sr);
                 String line;
+                tickTime = new Date();
                 while((line = br.readLine()) != null) {
                     System.out.println(line);
                     /**
                      * Todo: Parse line then stuff results into the 'stats' ConcurrentHashMap
                      */
+                    parseLine(line);
                 }
                 Thread.sleep(frequency);
             }
@@ -57,7 +62,35 @@ public class ProcessMonitor implements Runnable {
 
     private void parseLine(String line) {
 
+        if (line.indexOf("%") != -1) {
+            return;
+        }
+
         ProcessInfo pi = new ProcessInfo();
-        pi.setName("");
+        String val = "";
+
+        val = line.substring(0,5).trim();
+        pi.setCpu(Double.parseDouble(val));
+
+        val = line.substring(5,10).trim();
+        pi.setMemory(Double.parseDouble(val));
+
+        val = line.substring(10,line.length()).trim();
+        pi.setName(val);
+
+        pi.setTime(tickTime);
+
+        addToMap(pi);
+    }
+
+    private void addToMap(ProcessInfo pi) {
+
+        String key = pi.getName();
+
+        ProcessInfo existingPi = stats.get(key);
+        if (existingPi == null) {
+            stats.putIfAbsent(key, pi);
+        }
+
     }
 }
