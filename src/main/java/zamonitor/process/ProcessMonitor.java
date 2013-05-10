@@ -3,6 +3,7 @@ package zamonitor.process;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -16,7 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ProcessMonitor implements Runnable {
 
     private int frequency;
-    private ConcurrentHashMap<String, ProcessInfo> stats;
+    private ConcurrentHashMap<String, ArrayList<ProcessInfo>> stats;
     private Date tickTime;
 
     /**
@@ -26,11 +27,11 @@ public class ProcessMonitor implements Runnable {
         super();
     }
 
-    public ProcessMonitor(ConcurrentHashMap<String, ProcessInfo> stats) {
+    public ProcessMonitor(ConcurrentHashMap<String, ArrayList<ProcessInfo>> stats) {
         this(1000, stats);
     }
 
-    public ProcessMonitor(int frequency, ConcurrentHashMap<String, ProcessInfo> stats) {
+    public ProcessMonitor(int frequency, ConcurrentHashMap<String, ArrayList<ProcessInfo>> stats) {
         this.frequency = frequency;
         this.stats = stats;
         this.tickTime = null;
@@ -47,10 +48,7 @@ public class ProcessMonitor implements Runnable {
                 String line;
                 tickTime = new Date();
                 while((line = br.readLine()) != null) {
-                    System.out.println(line);
-                    /**
-                     * Todo: Parse line then stuff results into the 'stats' ConcurrentHashMap
-                     */
+                    //System.out.println(line);
                     parseLine(line);
                 }
                 Thread.sleep(frequency);
@@ -69,13 +67,13 @@ public class ProcessMonitor implements Runnable {
         ProcessInfo pi = new ProcessInfo();
         String val = "";
 
-        val = line.substring(0,5).trim();
+        val = line.substring(0, 5).trim();
         pi.setCpu(Double.parseDouble(val));
 
-        val = line.substring(5,10).trim();
+        val = line.substring(5, 10).trim();
         pi.setMemory(Double.parseDouble(val));
 
-        val = line.substring(10,line.length()).trim();
+        val = line.substring(10, line.length()).trim();
         pi.setName(val);
 
         pi.setTime(tickTime);
@@ -87,9 +85,21 @@ public class ProcessMonitor implements Runnable {
 
         String key = pi.getName();
 
-        ProcessInfo existingPi = stats.get(key);
-        if (existingPi == null) {
-            stats.putIfAbsent(key, pi);
+        ArrayList<ProcessInfo> existingPiList = stats.get(key);
+
+        if (existingPiList == null) {
+            existingPiList = new ArrayList<>();
+            existingPiList.add(pi);
+            stats.putIfAbsent(key, existingPiList);
+        } else {
+            ProcessInfo piMultiple;
+            piMultiple = existingPiList.get(existingPiList.size() - 1);
+            if (piMultiple.getTime() == pi.getTime()) {
+                piMultiple.setMemory(pi.getMemory() + piMultiple.getMemory());
+                piMultiple.setCpu(pi.getCpu() + piMultiple.getCpu());
+            } else {
+                existingPiList.add(pi);
+            }
         }
 
     }
