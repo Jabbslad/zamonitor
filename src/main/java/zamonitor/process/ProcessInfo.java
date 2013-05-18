@@ -62,10 +62,18 @@ public class ProcessInfo {
         this.name = name;
     }
 
+    /**
+     * Get the time of the process snapshot
+     * @return Time of the process snapshot
+     */
     public Date getTime() {
         return time;
     }
 
+    /**
+     * Set the time of the process snapshot
+     * @param time Time of the process snapshot
+     */
     public void setTime(Date time) {
         this.time = time;
     }

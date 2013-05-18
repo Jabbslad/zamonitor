@@ -16,29 +16,31 @@ import java.util.concurrent.ConcurrentHashMap;
  * Time: 22:12
  * Desc: Output process information to a file
  */
-public class ProcessSave implements Runnable {
-
-    private String fileName;
-    private ConcurrentHashMap<String, ArrayList<ProcessInfo>> stats;
+public class ProcessSave extends ProcessSaveLoad implements Runnable {
 
     private ProcessSave() {
         super();
     }
 
     public ProcessSave(ConcurrentHashMap<String, ArrayList<ProcessInfo>> stats) {
-        this(stats, "ProcessOutput.txt");
+        super(stats, "ProcessOutput.txt");
     }
 
     public ProcessSave(ConcurrentHashMap<String, ArrayList<ProcessInfo>> stats, String fileName) {
-        this.stats = stats;
-        this.fileName = fileName;
+        super(stats, fileName);
     }
 
     @Override
     public void run() {
 
+        int doSave = 0;
+
+        while(doSave == 0) {
+
+        }
+
         try {
-            File file = new File(fileName);
+            File file = new File(this.getFileName());
 
             if (!file.exists()) {
                 file.createNewFile();
@@ -52,14 +54,14 @@ public class ProcessSave implements Runnable {
             df.setMaximumFractionDigits(1);
             df.setRoundingMode(RoundingMode.DOWN);
 
-            for (ArrayList<ProcessInfo> piList : stats.values()) {
+            for (ArrayList<ProcessInfo> piList : this.getStats().values()) {
                 for (ProcessInfo pi : piList) {
                     bw.write(pi.getTime().toString());
-                    bw.write("\t\t");
+                    bw.write("###");
                     bw.write(df.format(pi.getCpu()).toString());
-                    bw.write("\t\t");
+                    bw.write("###");
                     bw.write(df.format(pi.getMemory()).toString());
-                    bw.write("\t\t");
+                    bw.write("###");
                     bw.write(pi.getName());
                     bw.write("\n");
                 }

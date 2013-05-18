@@ -57,11 +57,11 @@ public class ProcessSaveLoad {
         // Intentionally private and empty
     }
 
-    public ProcessSaveLoad(ConcurrentHashMap<String, ArrayList<ProcessInfo>> stats) {
+    protected ProcessSaveLoad(ConcurrentHashMap<String, ArrayList<ProcessInfo>> stats) {
         this(stats, "ProcessOutput.txt");
     }
 
-    public ProcessSaveLoad(ConcurrentHashMap<String, ArrayList<ProcessInfo>> stats, String fileName) {
+    protected ProcessSaveLoad(ConcurrentHashMap<String, ArrayList<ProcessInfo>> stats, String fileName) {
         this.stats = stats;
         this.fileName = fileName;
     }

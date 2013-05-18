@@ -1,5 +1,6 @@
 .DS_Store
 
+# Java
 *.class
 
 # Package Files #
@@ -9,3 +10,6 @@
 
 # Project Files #
 .idea
+
+# Misc
+ProcessOutput.txt

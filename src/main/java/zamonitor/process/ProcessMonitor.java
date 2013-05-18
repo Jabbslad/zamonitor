@@ -48,7 +48,6 @@ public class ProcessMonitor implements Runnable {
                 String line;
                 tickTime = new Date();
                 while((line = br.readLine()) != null) {
-                    //System.out.println(line);
                     parseLine(line);
                 }
                 Thread.sleep(frequency);
