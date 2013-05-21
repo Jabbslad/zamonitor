@@ -33,12 +33,6 @@ public class ProcessSave extends ProcessSaveLoad implements Runnable {
     @Override
     public void run() {
 
-        int doSave = 0;
-
-        while(doSave == 0) {
-
-        }
-
         try {
             File file = new File(this.getFileName());
 
